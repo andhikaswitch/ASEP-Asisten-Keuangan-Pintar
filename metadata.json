@@ -1,0 +1,8 @@
+{
+  "name": "Asep - Asisten Keuangan Gintoki",
+  "description": "AI Agent berbasis suara dengan kepribadian Sakata Gintoki untuk mengatur keuangan dan ngobrol santai.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": []
+}
