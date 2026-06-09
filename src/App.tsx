@@ -7,6 +7,8 @@ import { useFinance } from './store/finance';
 import { useSpeech } from './hooks/useSpeech';
 import { initChat } from './services/ai';
 import { ChatMessage, Category, TabType } from './types';
+import { MessageSquare, FileText, BarChart2 } from 'lucide-react';
+import { cn } from './lib/utils';
 
 export default function App() {
   const { transactions, addTransaction, getSummary, exportToExcel } = useFinance();
@@ -113,43 +115,71 @@ export default function App() {
   };
 
   return (
-    <div className="flex h-screen bg-slate-900 text-slate-200 font-sans overflow-hidden">
-      <div className="hidden md:flex shrink-0">
-        <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
-      </div>
-      
-      <div className="flex-1 flex flex-col min-w-0 bg-slate-900 relative">
-        {activeTab === 'chat' && (
-          <div className="absolute inset-0">
-            <ChatArea 
-              messages={messages}
-              isListening={isListening}
-              isSpeaking={isSpeaking}
-              transcript={transcript}
-              onSendMessage={handleSendMessage}
-              startListening={startListening}
-              stopListening={stopListening}
-              stopSpeaking={stopSpeaking}
-            />
-          </div>
-        )}
-        
-        {activeTab === 'report' && (
-          <div className="absolute inset-0">
-            <ReportView 
-              transactions={transactions} 
-              onExport={exportToExcel} 
-            />
-          </div>
-        )}
+    <div className="flex flex-col h-dvh bg-slate-900 text-slate-200 font-sans overflow-hidden">
+      <div className="flex flex-1 min-h-0">
+        <div className="hidden md:flex shrink-0">
+          <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
+        </div>
+
+        <div className="flex-1 flex flex-col min-w-0 bg-slate-900 relative">
+          {activeTab === 'chat' && (
+            <div className="absolute inset-0">
+              <ChatArea
+                messages={messages}
+                isListening={isListening}
+                isSpeaking={isSpeaking}
+                transcript={transcript}
+                onSendMessage={handleSendMessage}
+                startListening={startListening}
+                stopListening={stopListening}
+                stopSpeaking={stopSpeaking}
+              />
+            </div>
+          )}
+
+          {activeTab === 'report' && (
+            <div className="absolute inset-0">
+              <ReportView
+                transactions={transactions}
+                onExport={exportToExcel}
+              />
+            </div>
+          )}
+
+          {activeTab === 'stats' && (
+            <div className="absolute inset-0 lg:hidden">
+              <FinancePanel
+                summary={getSummary()}
+                onExport={exportToExcel}
+                className="border-l-0"
+              />
+            </div>
+          )}
+        </div>
+
+        <div className="hidden lg:flex shrink-0">
+          <FinancePanel
+            summary={getSummary()}
+            onExport={exportToExcel}
+          />
+        </div>
       </div>
 
-      <div className="hidden lg:flex shrink-0">
-        <FinancePanel 
-          summary={getSummary()}
-          onExport={exportToExcel}
-        />
-      </div>
+      {/* Mobile bottom navigation */}
+      <nav className="flex md:hidden shrink-0 bg-slate-900 border-t border-slate-800">
+        <button onClick={() => setActiveTab('chat')} className={cn('flex-1 flex flex-col items-center gap-1 py-3 text-xs transition-colors', activeTab === 'chat' ? 'text-blue-400' : 'text-slate-500 hover:text-slate-300')}>
+          <MessageSquare size={20} />
+          <span>Chat</span>
+        </button>
+        <button onClick={() => setActiveTab('report')} className={cn('flex-1 flex flex-col items-center gap-1 py-3 text-xs transition-colors', activeTab === 'report' ? 'text-blue-400' : 'text-slate-500 hover:text-slate-300')}>
+          <FileText size={20} />
+          <span>Laporan</span>
+        </button>
+        <button onClick={() => setActiveTab('stats')} className={cn('flex-1 flex flex-col items-center gap-1 py-3 text-xs transition-colors', activeTab === 'stats' ? 'text-blue-400' : 'text-slate-500 hover:text-slate-300')}>
+          <BarChart2 size={20} />
+          <span>Statistik</span>
+        </button>
+      </nav>
     </div>
   );
 }

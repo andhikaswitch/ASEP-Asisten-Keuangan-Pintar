@@ -24,7 +24,7 @@ export function ReportView({ transactions, onExport }: { transactions: Transacti
         </button>
       </div>
 
-      <div className="bg-slate-800/50 rounded-xl border border-slate-700 overflow-hidden">
+      <div className="bg-slate-800/50 rounded-xl border border-slate-700 overflow-x-auto">
         <table className="w-full text-left text-sm whitespace-nowrap">
           <thead className="bg-slate-800 text-slate-400 border-b border-slate-700">
             <tr>

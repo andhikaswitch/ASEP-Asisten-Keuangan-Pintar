@@ -12,11 +12,12 @@ interface FinancePanelProps {
     categoryTotals: Record<string, number>;
   };
   onExport: () => void;
+  className?: string;
 }
 
 const COLORS = ['#3b82f6', '#8b5cf6', '#ec4899', '#f43f5e', '#f97316', '#eab308', '#22c55e', '#14b8a6'];
 
-export function FinancePanel({ summary, onExport }: FinancePanelProps) {
+export function FinancePanel({ summary, onExport, className }: FinancePanelProps) {
   const data = Object.entries(summary.categoryTotals).map(([name, value], index) => ({
     name,
     value,
@@ -28,7 +29,7 @@ export function FinancePanel({ summary, onExport }: FinancePanelProps) {
   };
 
   return (
-    <div className="w-80 bg-slate-800 border-l border-slate-700 p-6 flex flex-col h-full overflow-y-auto">
+    <div className={cn("w-full lg:w-80 bg-slate-800 border-l border-slate-700 p-6 flex flex-col h-full overflow-y-auto", className)}>
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-xl font-bold text-slate-100">Statistik Bos</h2>
         <button 

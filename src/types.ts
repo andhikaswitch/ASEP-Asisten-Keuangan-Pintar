@@ -23,4 +23,4 @@ export type Category =
   | 'Freelance' 
   | 'Lain-lain';
 
-export type TabType = 'chat' | 'report';
+export type TabType = 'chat' | 'report' | 'stats';
