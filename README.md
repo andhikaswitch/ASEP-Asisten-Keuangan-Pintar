@@ -26,11 +26,7 @@ Asep adalah asisten keuangan pribadi cerdas berbantuan AI dengan *voice interfac
 
 🔗 **Live Demo:** [https://asep-asisten-keuangan-pintar.vercel.app/](https://asep-asisten-keuangan-pintar.vercel.app/)
 
-*(Ganti dengan path/URL gambar antarmuka chat dan dashboard keuangan yang asli)*
-![Demo UI Asep](placeholder-demo-ui.png)
-
-*(Ganti dengan link GIF demo saat Asep merekam suara dan menjawab)*
-![Demo Voice Interaction](placeholder-voice-demo.gif)
+![Demo UI Asep](src/img/gambar%20demo.png)
 
 ## 3. WHY THIS PROJECT EXISTS (Problem Statement)
 
