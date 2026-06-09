@@ -1,7 +1,16 @@
+# Kelompok 4
+
+| Nama | NPM | Kelas |
+|------|-----|-------|
+| Andhika Eka Pratama | 2410631170129 | 4B |
+| Raika Maulana Dwi Putra | 2410631170100 | 4B |
+
+---
+
 > ⚠️ **PERINGATAN KEAMANAN PENTING (SECURITY NOTICE)** ⚠️
 > **JANGAN PERNAH** mempublikasikan atau meng-commit file `.env`, atau kode apapun yang berisi *hardcoded* API Keys (terutama `GEMINI_API_KEY`) ke repository publik seperti GitHub. File `.env` berisi kredensial rahasia rahasia yang akan menghabiskan kuota atau tagihan Anda jika disalahgunakan. Pastikan file `.env` selalu berada di dalam `.gitignore`. Hanya bagikan file `.env.example` sebagai referensi struktur variabel.
 
-# Asep: AI Voice Assistant Keuangan (Gintoki Persona)
+# Asep: Asisten Keuangan Pintar
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![React](https://img.shields.io/badge/React-18-blue)
@@ -9,11 +18,13 @@
 ![Gemini API](https://img.shields.io/badge/Powered_by-Gemini-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Asep adalah asisten keuangan pribadi cerdas berbantuan AI dengan *voice interface*, yang didesain memiliki kepribadian sarkas 100% Sakata Gintoki dari animasi Gintama. Catat pengeluaran dan pemasukan Anda hanya dengan ngobrol!
+Asep adalah asisten keuangan pribadi cerdas berbantuan AI dengan *voice interface*. Catat pengeluaran dan pemasukan Anda hanya dengan ngobrol!
 
 ---
 
 ## 2. DEMO / SCREENSHOT
+
+🔗 **Live Demo:** [https://asep-asisten-keuangan-pintar.vercel.app/](https://asep-asisten-keuangan-pintar.vercel.app/)
 
 *(Ganti dengan path/URL gambar antarmuka chat dan dashboard keuangan yang asli)*
 ![Demo UI Asep](placeholder-demo-ui.png)
